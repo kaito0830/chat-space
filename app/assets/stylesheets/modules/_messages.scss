@@ -1,0 +1,181 @@
+$form-btn: #38aef0; //editやsendボタンに使う色
+
+// 要素を中央に寄せる
+@mixin centering() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+* {
+  box-sizing: border-box;
+}
+
+// サイドバー
+.side--bar{
+  height: 100vh;
+  width: 300px;
+  background-color: #253141;
+  float: left;
+  font-weight: bold;
+  &__user--name{ 
+    height: 100px;
+    color: #fff;
+    @include centering();
+    p{
+      font-size: 16px;
+    }
+    &__top--items{
+      height: 20px;
+      width: 260px;
+      display: flex;
+      justify-content: space-between;
+      line-height: 20px;
+      &__name{
+        width: calc(100% - 60px);
+      }
+      &__icons{
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+        li{
+          a{
+            color: #fff;
+            font-size: 16px;
+            margin-left: 5px;
+          }
+        }
+        
+      }
+    } 
+  }
+  &__group--list{
+    height: calc(100% - 100px);
+    background-color: #2f3e51;
+    font-weight: bold;
+    padding: 20px 0 20px 20px;
+    &__logo{
+      color: #fff;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    &__message{
+      color: #fff;
+      font-size: 11px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+// チャットのメイン部
+.chat--main{
+  height: 100vh;
+  width:calc(100vw - 300px);
+  background-color: #fff;
+  float: right;
+  &__group--info{
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px 0 40px;
+    &__left{
+      &__group--name{
+        margin-top: 35px;
+        margin-bottom: 15px;
+        color: #333;
+        font-size: 20px;
+        
+      }
+      &--members{
+        position: absolute;
+        bottom: 0;
+        color: #999;
+        font-size: 12px;
+        
+      }
+    }
+    &__edit{
+      height: 40px;
+      margin-top: 28px;
+      @include centering();
+      a{
+      height: 40px;
+      width: 72px;
+      color:$form-btn;
+      font-size: 16px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      border:1px solid $form-btn;
+      line-height: 40px;
+      }
+    }
+  }
+  &__message{
+    &--list{
+      height: calc(100vh - 190px);
+      background-color:#fafafa;
+      padding-top: 35px;
+      padding-left: 40px;
+      &__show{
+        &--info{
+          color: #333;
+          font-size: 16px;
+        }
+        &--comment{
+          color: #434a54;
+          font-size: 14px;
+          margin: 12px 0 46px 0;
+        }
+      }
+    }
+    &__form{
+      height: 90px;
+      background-color:#d2d2d2;
+      @include centering();
+      padding: 0 40px;
+      &__box{
+        height: 50px;
+        width: 100%;
+        position: relative;
+        background-color: #fff;
+        line-height: 50px;
+        display: flex;
+        input{
+          height: 50px;
+          width: 945px;
+          padding: 0 40px 0 10px;
+        }   
+        &--message{
+          border: 0 solid;
+          input{
+            border-width:0px;
+            border-style:None;
+          }
+          &--img{
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            &--file{
+              display: none;
+            }
+          }
+        }  
+      }
+      &__send{
+        margin-left: 15px;
+        input{
+          height: 50px;
+          width: 100px;
+          color: #fff;
+          background-color:$form-btn;
+          padding: 0 20px;
+          border-style: none;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+}
+
