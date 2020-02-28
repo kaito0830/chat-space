@@ -149,6 +149,10 @@ $form-btn: #38aef0; //editやsendボタンに使う色
         }   
         &--message{
           border: 0 solid;
+          input{
+            border-width:0px;
+            border-style:None;
+          }
           &--img{
             position: absolute;
             top: 0px;
