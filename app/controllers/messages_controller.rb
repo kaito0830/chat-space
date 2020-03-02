@@ -16,8 +16,9 @@ class MessagesController < ApplicationController
       flash.now[:alert] = 'メッセージを入力してください'
       render :index
    end
-
   end
+
+  
 
   private
   def message_params
