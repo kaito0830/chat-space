@@ -130,52 +130,51 @@ $form-btn: #38aef0; //editやsendボタンに使う色
         }
       }
     }
-    &__form{
-      height: 90px;
-      background-color:#d2d2d2;
-      @include centering();
-      padding: 0 40px;
-      &__box{
-        height: 50px;
+  }
+  &__form{
+    height: 90px;
+    width:100%;
+    background-color:#d2d2d2;
+    @include centering();
+    padding: 0 40px;
+    width: 100%;
+    display: flex;
+    &__box{
+      height: 50px;
+      width: 100%;
+      display: flex;
+      &__comment{
         width: 100%;
-        position: relative;
-        background-color: #fff;
-        line-height: 50px;
-        display: flex;
-        input{
-          height: 50px;
-          width: 945px;
-          padding: 0 40px 0 10px;
-        }   
-        &--message{
-          border: 0 solid;
-          input{
-            border-width:0px;
-            border-style:None;
-          }
+        &__message{
+          width: 0%;
+          background-color:#fff;
+          display: flex;
+          position: relative;
           &--img{
-            position: absolute;
-            top: 0px;
-            right: 10px;
+            height:10px;
+            width: 10px;
+            &--icon{
+              position: absolute;
+              top:20px;
+              right: 10px;
+            }
             &--file{
               display: none;
             }
           }
-        }  
+        }
       }
       &__send{
+        height: 50px;
+        background-color: $form-btn;
+        color: #fff;
         margin-left: 15px;
-        input{
-          height: 50px;
-          width: 100px;
-          color: #fff;
-          background-color:$form-btn;
-          padding: 0 20px;
-          border-style: none;
-          line-height: 50px;
-        }
+        padding: 0 30px;
       }
     }
   }
 }
 
+.new_message{
+  width: 100%;
+}
