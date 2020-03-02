@@ -120,8 +120,7 @@ $form-btn: #38aef0; //editやsendボタンに使う色
       padding-left: 40px;
       &__show{
         &--info{
-          color: #333;
-          font-size: 16px;
+          
         }
         &--comment{
           color: #434a54;
@@ -178,3 +177,31 @@ $form-btn: #38aef0; //editやsendボタンに使う色
 .new_message{
   width: 100%;
 }
+
+.message{
+  margin-bottom: 46px;
+}
+
+.upper-message{
+  display: flex;
+  position: relative;
+  &__user-name{
+    color: #333;
+    font-size: 16px;
+  }
+  &__date{
+    color: #999;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .lower-message{
+      color: #434A54;
+      font-size: 14px;
+      position: absolute;
+      top: 28px;
+      left: 0;
+  }
+}
+
+
+
