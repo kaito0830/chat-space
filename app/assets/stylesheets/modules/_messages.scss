@@ -54,6 +54,7 @@ $form-btn: #38aef0; //editやsendボタンに使う色
     background-color: #2f3e51;
     font-weight: bold;
     padding: 20px 0 20px 20px;
+    overflow:scroll;
     &__logo{
       color: #fff;
       font-size: 15px;
@@ -118,10 +119,8 @@ $form-btn: #38aef0; //editやsendボタンに使う色
       background-color:#fafafa;
       padding-top: 35px;
       padding-left: 40px;
+      overflow: scroll;
       &__show{
-        &--info{
-          
-        }
         &--comment{
           color: #434a54;
           font-size: 14px;
