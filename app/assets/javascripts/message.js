@@ -1,42 +1,42 @@
 $(function(){
   function buildHTML(message){
     // 共通部はhtml_partにまとめる
-    var html_part = `<div class="message" data-message-id=` + message.id + `>` +
-    `<div class="upper-message">` +
-      `<div class="upper-message__user-name">` +
-        message.user_name +
-      `</div>` +
-      `<div class="upper-message__date">` +
-        message.created_at +
-      `</div>` +
-    `</div>`
+    var html_part = `<div class="message" data-message-id= ${message.id}> 
+    <div class="upper-message">
+      <div class="upper-message__user-name">
+        ${message.user_name}
+      </div>
+      <div class="upper-message__date">
+        ${message.created_at}
+      </div>
+    </div>`
     if ( message.content && message.image ) {
      var html =
       html_part + 
-     `<div class="lower-message">` +
-     `<p class="lower-message__content">` +
-       message.content +
-     `</p>` +
-     `<img src="` + message.image + `" class="lower-message__image" >` +
-   `</div>` +
-  `</div>`
+     `<div class="lower-message">
+     <p class="lower-message__content">
+       ${message.content}
+     </p>
+     <img src="${message.image} " class="lower-message__image" >
+   </div>
+  </div>`
     }else if (message.content) {
       var html =
       html_part +
-      `<div class="lower-message">` +
-        `<p class="lower-message__content">` +
-          message.content +
-        `</p>` +
-      `</div>` +
-    `</div>`
+      `<div class="lower-message">
+        <p class="lower-message__content">
+          ${message.content}
+        </p>
+      </div>
+    </div>`
 
     }else if(message.image){
       var html =
       html_part +
-      `<div class="lower-message">` +
-        `<img src="` + message.image + `" class="lower-message__image" >` +
-      `</div>` +
-    `</div>`
+      `<div class="lower-message">
+        <img src=" ${message.image }" class="lower-message__image" >
+      </div>
+    </div>`
 
     };
     return html;
@@ -66,7 +66,6 @@ $(function(){
   })
   var reloadMessages = function(){
     var last_message_id = $('.message:last').data("message-id");
-    console.log(last_message_id);
     $.ajax({
       url: "api/messages",
       type: "get",
